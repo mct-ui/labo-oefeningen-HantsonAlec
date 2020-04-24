@@ -763,6 +763,44 @@ a:focus {
 /*------------------------------------*\
   #COMPONENTS
 \*------------------------------------*/
-.c-logo {
+.c-logo svg {
     height: 32px;
+}
+.c-nav {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    list-style: none;
+    border: none;
+}
+.c-nav_item {
+    padding: 8px 16px;
+    list-style: none;
+}
+.c-link_item:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 30px #fdec6e;
+    cursor: pointer;
+}
+.c-link_item:focus {
+    color: #ffffff;
+    text-shadow: 0px 0px 30px #fdec6e;
+}
+.c-text {
+    max-width: 32em;
+}
+@media (min-width: 992px) {
+    .c-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .c-nav {
+        display: block;
+    }
+    .c-nav-list {
+        display: flex;
+    }
+    .c-nav_item {
+        padding: 8px 16px;
+    }
 }
