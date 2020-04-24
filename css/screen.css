@@ -1,7 +1,21 @@
 /*------------------------------------*\
   #FONTS
 \*------------------------------------*/
-
+@font-face {
+    font-family: ClearSans-Light, sans-serif;
+    src: url('/fonts/ClearSans-Light-webfont.woff');
+    font-weight: 200;
+}
+@font-face {
+    font-family: ClearSans-Medium, sans-serif;
+    src: url('/fonts/ClearSans-Medium-webfont.woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: ClearSans-Regular, sans-serif;
+    src: url('/fonts/ClearSans-Regular-webfont.woff');
+    font-weight: 600;
+}
 /*------------------------------------*\
   #GENERIC
 \*------------------------------------*/
@@ -13,12 +27,15 @@
 */
 
 html {
-    font-size: 16px;
-    line-height: 24px;
-    font-family: Helvetica, arial, sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: ClearSans-Light, arial, sans-serif;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(to bottom right, #0a257d, #061649);
+    background-attachment: fixed;
+    color: #ffffff;
 }
 
 *,
@@ -35,13 +52,13 @@ html {
  */
 
 ::-moz-selection {
-    background: #0053FB;
+    background: #0053fb;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: #0053FB;
+    background: #0053fb;
     color: white;
     text-shadow: none;
 }
@@ -146,15 +163,15 @@ hr {
 }
 
 a {
-    color: #1195F7;
-    transition: all .1s ease-in-out;
+    color: #1195f7;
+    transition: all 0.1s ease-in-out;
 }
 
 a:visited,
 a:active,
 a:hover,
 a:focus {
-    color: #8EC7FF;
+    color: #8ec7ff;
 }
 
 /*------------------------------------*\
@@ -205,7 +222,7 @@ a:focus {
 .o-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+    max-width: 71em; /* 1278/18=71 */
 }
 
 /*
@@ -248,9 +265,9 @@ a:focus {
     flex-wrap: wrap;
 }
 
-    .o-layout__item {
-        flex-basis: 100%;
-    }
+.o-layout__item {
+    flex-basis: 100%;
+}
 
 /* gutter modifiers, these affect o-layout__item too */
 
@@ -680,7 +697,7 @@ a:focus {
 /*
     Print styles.
     ---
-    Inlined to avoid the additional HTTP request:
+    Inlinedto avoid the additional HTTP request:
     http://www.phpied.com/delay-loading-your-print-css/
 */
 
@@ -700,18 +717,18 @@ a:focus {
         text-decoration: underline;
     }
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: ' (' attr(href) ')';
     }
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: ' (' attr(title) ')';
     }
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+        content: '';
     }
     pre {
         white-space: pre-wrap !important;
@@ -742,4 +759,10 @@ a:focus {
     h3 {
         page-break-after: avoid;
     }
+}
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+.c-logo {
+    height: 32px;
 }
